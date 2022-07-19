@@ -4,7 +4,7 @@
 # of space is >= 90% 
 
 ADMIN="test@gmail.com"
-# set alert level 90% is default
+# set alert level when utilization 90% is default
 ALERT=90
 df -H | grep -vE '^Filesystem|tmpfs|cdrom' | awk '{ print $5 " " $1 }' | while read output;
 do
