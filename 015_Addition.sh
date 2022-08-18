@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Enter a number and hit \"Enter\""
+read user_number1;
+echo "Enter another number and hit \"Enter\""
+read user_number2;
+
+printf "You entered: %d and %d\n" $user_number1 $user_number2
+printf "Addition: %d\n" $(( user_number1 + user_number2))
