@@ -4,14 +4,27 @@
 myFunction(){
 
 	echo 'Please enter any two number'
-	echo 'NUmber-1 :'
+	printf "NUmber-1 :"
 	read number1;
-	echo 'Number-2:'
-	read number2;
+	printf 'Number-2 :'
+	read number2;	
+	sum=$(($number1 + $number2))
+	echo 'Addition:'$sum 
 
-	echo 'Addition : $number1 + $number2' 
+}
+#function call
+# Accept number
+sumNumber()
+{
+	echo 'please enter any 5 numbers :'
+	sum=0
+	for i in {0..5}
+	 do
+		read num 
+	done
 
 }
 
-#function call
-myFunction
+#myFunction
+
+sumNumber
