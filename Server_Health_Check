@@ -1,0 +1,36 @@
+
+#!/bin/bash
+
+echo "=========================================="
+echo "       LINUX SERVER HEALTH CHECK"
+echo "=========================================="
+
+# System uptime
+echo ""
+echo "System Uptime:"
+uptime -p
+
+# CPU Load Average
+echo ""
+echo "CPU Load Average:"
+uptime | awk -F'load average:' '{print $2}'
+
+# Memory Usage
+echo ""
+echo "Memory Usage:"
+free -h
+
+# Disk Usage
+echo ""
+echo "Disk Usage:"
+df -h
+
+# Top 5 CPU Consuming Processes
+echo ""
+echo "Top 5 CPU Consuming Processes:"
+ps -eo pid,comm,%cpu,%mem --sort=-%cpu | head -n 6
+
+echo ""
+echo "=========================================="
+echo "      HEALTH CHECK COMPLETED"
+echo "=========================================="
