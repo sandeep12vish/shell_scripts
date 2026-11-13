@@ -1,0 +1,31 @@
+
+#!/bin/bash
+
+# Internet Connectivity Monitoring
+# ISP 1 and ISP 2
+
+ISP1="Google DNS"
+ISP2="Cloudflare DNS"
+
+IP1="8.8.8.8"
+IP2="1.1.1.1"
+
+echo "=================================="
+echo " Internet Connectivity Monitoring "
+echo "=================================="
+
+# Check ISP 1
+if ping -c 2 -W 2 "$IP1" >/dev/null 2>&1; then
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] ISP 1 ($ISP1): ONLINE"
+else
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] ISP 1 ($ISP1): OFFLINE"
+fi
+
+# Check ISP 2
+if ping -c 2 -W 2 "$IP2" >/dev/null 2>&1; then
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] ISP 2 ($ISP2): ONLINE"
+else
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] ISP 2 ($ISP2): OFFLINE"
+fi
+
+echo "=================================="
